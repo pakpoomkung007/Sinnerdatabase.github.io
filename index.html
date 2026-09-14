@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limbus Company - Sinner Wiki</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #1f242d; 
+            color: #e5e7eb;           
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #9e0e0e;  
+            color: #ffbc04;
+            text-align: center;
+            padding: 35px 20px;
+            border-bottom: 4px solid #ffbc04;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #790909; 
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            display: inline-block;
+            color: #ffbc04;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #a70606;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .banner-box {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .banner-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            background-color: #111318;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #ffbc04;
+            padding: 15px;
+        }
+
+        .title-center {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #ffbc04;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sinner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .sinner-card {
+            background: #2a303c;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #4b5563;
+            transition: 0.3s;
+        }
+
+        .sinner-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffbc04;
+            box-shadow: 0 8px 15px rgba(255, 188, 4, 0.2);
+        }
+
+        .sinner-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #111;
+        }
+
+        .sinner-detail {
+            padding: 18px;
+        }
+
+        .tag-lc {
+            display: inline-block;
+            background-color: #9e0e0e;
+            color: #ffbc04;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .sinner-detail h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .sinner-detail p {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
+
+        .product-button {
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #9e0e0e;
+            color: #ffbc04;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .product-button:hover {
+            background-color: #790909;
+            color: #ffffff;
+        }
+
+        .table-section {
+            margin-bottom: 50px;
+            background: #2a303c;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #4b5563;
+        }
+
+        .limbus-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1f242d;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .limbus-table th, .limbus-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #374151;
+            color: #e5e7eb;
+        }
+
+        .limbus-table th {
+            background-color: #7d0000;
+            color: #ffbc04;
+            text-transform: uppercase;
+        }
+
+        .limbus-table tbody tr:hover {
+            background-color: #374151;
+        }
+
+        .contact-box {
+            background: #2a303c;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+            border: 1px solid #4b5563;
+            color: #d1d5db;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background-color: #111318;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #374151;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #4b5563;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .detail-box {
+                flex-direction: column;
+                align-items: center;
+            }
+            .place-card {
+                flex: unset;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>LIMBUS COMPANY</h1>
+        <p>Library & Sinner Database Index</p>
+    </header>
+
+   <nav>
+        <a href="#home">หน้าแรก</a>
+        <a href="#sinners">SINNER</a>
+        <a href="#status">สถานะก่อนเข้าบริษัท</a>
+        <a href="#contact">ติดต่อเรา</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="banner-box" id="home">
+            <img src="2537709_dfeae.png" alt="2537709_dfeae" class="banner-img">
+        </div>
+
+        <h2 class="title-center" id="sinners">แนะนำเหล่า SINNER</h2>
+        <section class="sinner-grid">
+
+            <!-- 1. Yi Sang -->
+            <div class="sinner-card">
+                <img src="Yi_Sang_Sinner_ID_Card.webp" alt="Yi_Sang_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Yi Sang</h3>
+                    <p>นักวิจัยอัจฉริยะสุดขรึม ฝังใจกับอดีตที่กลุ่มเพื่อนแตกหักเพราะเทคโนโลยี</p>
+                    <a href="Yi-sang.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 2. Faust -->
+            <div class="sinner-card">
+                <img src="Faust_Sinner_ID_Card.webp" alt="Faust_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Faust</h3>
+                    <p>หญิงสาวผู้รอบรู้และเยือกเย็น สามารถดึงความรู้ของตัวเองจากมิติขนานมาใช้ได้</p>
+                    <a href="Faust.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 3. Don Quixote -->
+            <div class="sinner-card">
+                <img src="Don_Quixote_Sinner_ID_Card.webp" alt="Don_Quixote_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Don Quixote</h3>
+                    <p>หญิงสาวสุดไฮเปอร์ เพ้อฝัน ร่าเริงเกินเหตุ คลั่งไคล้การเป็น "อัศวินผดุงความยุติธรรม"</p>
+                    <a href="Don-Quixote.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 4. Ryōshū -->
+            <div class="sinner-card">
+                <img src="Ryōshū_Sinner_ID_Card.webp" alt="Ryōshū_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Ryōshū</h3>
+                    <p>สาวชอบพูดคำย่อ มองการฆ่าเป็นศิลปะ</p>
+                    <a href="Ryōshū.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 5. Meursault -->
+            <div class="sinner-card">
+                <img src="Meursault_Sinner_ID_Card.webp" alt="Meursault_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Meursault</h3>
+                    <p>ชายหนุ่มไร้อารมณ์ ทำตามคำสั่งเป๊ะ 100% มองโลกด้วยตรรกะล้วนๆ</p>
+                    <a href="Meursault.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 6. Hong Lu -->
+            <div class="sinner-card">
+                <img src="Hong_Lu_Sinner_ID_Card.webp" alt="Hong_Lu_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Hong Lu</h3>
+                    <p>นายน้อยผู้มองโลกในแง่ดีตลอดเวลา ถูกส่งมาเพราะการเมืองในตระกูลใหญ่</p>
+                    <a href="Hong-Lu.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 7. Heathcliff -->
+            <div class="sinner-card">
+                <img src="Heathcliff_Sinner_ID_Card.webp" alt="Heathcliff_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Heathcliff</h3>
+                    <p>ชายหนุ่มหัวร้อน เลือดร้อน โมโหง่าย และมีปมเรื่องชนชั้นในอดีต</p>
+                    <a href="Heathcliff.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 8. Ishmael -->
+            <div class="sinner-card">
+                <img src="Ishmael_Sinner_ID_Card.webp" alt="Ishmael_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Ishmael</h3>
+                    <p>อดีตกัปตันเรือผู้เคยผ่านมหาสมุทรอันโหดร้าย มีความสมเหตุสมผลและสติที่สุดในกลุ่ม</p>
+                    <a href="Ishmael.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 9. Rodion -->
+            <div class="sinner-card">
+                <img src="Rodion_Sinner_ID_Card.webp" alt="Rodion_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Rodion</h3>
+                    <p>พี่สาวใจดี อารมณ์ดี รักความสบาย อดีตเคยพัวพันกับคดีฆาตกรรมโรงรับจำนำ</p>
+                    <a href="Rodion.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 10. Sinclair -->
+            <div class="sinner-card">
+                <img src="Sinclair_Sinner_ID_Card.webp" alt="Sinclair_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Sinclair</h3>
+                    <p>เด็กหนุ่มขี้ขลาด อ่อนต่อโลก ผู้มีอดีตอันเลวร้ายกับลัทธิประหลาดในวัยเด็ก</p>
+                    <a href="Sinclair.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 11. Outis -->
+            <div class="sinner-card">
+                <img src="Outis_Sinner_ID_Card.webp" alt="Outis_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Outis</h3>
+                    <p>ทหารผ่านศึกจอมวางแผน ผู้มีความจงรักภักดีต่อผู้จัดการแดนท์อย่างออกนอกหน้า</p>
+                    <a href="Outis.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+            <!-- 12. Gregor -->
+            <div class="sinner-card">
+                <img src="Gregor_Sinner_ID_Card.webp" alt="Gregor_Sinner_ID_Card">
+                <div class="sinner-detail">
+                    <span class="tag-lc">LCB</span>
+                    <h3>Gregor</h3>
+                    <p>อดีตทหารผ่านศึกผู้มีแขนขวาเป็นแมลงกลายพันธุ์ ใจดีและมักเป็นห่วงคนอื่นเสมอ</p>
+                    <a href="Gregor.html" class="product-button">ดูรายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+
+        </section>
+
+        <hr> 
+
+        <div class="table-section" id="status">
+            <h2 class="title-center">สถานะก่อนที่จะเข้าบริษัท</h2>
+            <table class="limbus-table">
+                <thead>
+                    <tr>
+                        <th>รหัส</th>
+                        <th>ที่อยู่/ที่ทำงาน</th>
+                        <th>เมือง</th>
+                        <th>สถานะ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LCB1 (Yi Sang)</td>
+                        <td>S Corp. / League of Nineveh</td>
+                        <td>The City</td>
+                        <td>ลาออก / อดีตนักวิจัย</td>
+                    </tr>
+                    <tr>
+                        <td>LCB2 (Faust)</td>
+                        <td>ไม่ระบุ (สถาบันวิจัยลับ)</td>
+                        <td>The City</td>
+                        <td>นักวิทยาศาสตร์อิสระ</td>
+                    </tr>
+                    <tr>
+                        <td>LCB3 (Don Quixote)</td>
+                        <td>La Mancha Land</td>
+                        <td>The City</td>
+                        <td>อดีตสมาชิกระดับสูง (Fixer)</td>
+                    </tr>
+                    <tr>
+                        <td>LCB4 (Ryōshū)</td>
+                        <td>The House of Spiders</td>
+                        <td>The City</td>
+                        <td>อดีตนักฆ่าอิสระ</td>
+                    </tr>
+                    <tr>
+                        <td>LCB5 (Meursault)</td>
+                        <td>N Corp.</td>
+                        <td>The City</td>
+                        <td>อดีตเจ้าหน้าที่ N Corp.</td>
+                    </tr>
+                    <tr>
+                        <td>LCB6 (Hong Lu)</td>
+                        <td>คฤหาสน์ตระกูล Jia</td>
+                        <td>The City</td>
+                        <td>คุณชายตระกูลใหญ่ (เดินทางออกมา)</td>
+                    </tr>
+                    <tr>
+                        <td>LCB7 (Heathcliff)</td>
+                        <td>Manor / Backstreets (Wuthering Heights)</td>
+                        <td>The City</td>
+                        <td>คนงานรับจ้าง / อดีตอันธพาล</td>
+                    </tr>
+                    <tr>
+                        <td>LCB8 (Ishmael)</td>
+                        <td>Great Lake / Ahab's Crew</td>
+                        <td>The City</td>
+                        <td>อดีตลูกเรือเดินสมุทร</td>
+                    </tr>
+                    <tr>
+                        <td>LCB9 (Rodion)</td>
+                        <td>Backstreets (Slum)</td>
+                        <td>The City</td>
+                        <td>ผู้ต้องหาคดีอาชญากรรม</td>
+                    </tr>
+                    <tr>
+                        <td>LCB10 (Sinclair)</td>
+                        <td>K Corp. / Demian's Village</td>
+                        <td>The City</td>
+                        <td>ผู้รอดชีวิตจากเหตุการณ์ลัทธิ</td>
+                    </tr>
+                    <tr>
+                        <td>LCB11 (Outis)</td>
+                        <td>Smoke War Frontlines</td>
+                        <td>The City</td>
+                        <td>อดีตทหารผ่านศึกสงครามควัน</td>
+                    </tr>
+                    <tr>
+                        <td>LCB12 (Gregor)</td>
+                        <td>G Corp. Frontlines</td>
+                        <td>The City</td>
+                        <td>อดีตทหารผ่านศึก G Corp.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <section class="contact-box" id="contact">
+            <h2 class="title-center" style="margin-bottom: 10px;">ข้อมูลติดต่อ</h2>
+            <p><strong>ผู้จัดทำ:</strong> ธีระนันท์ ถิ่นทัพไทย</p>
+            <p><strong>ผู้ช่วย:</strong> ภาคภูมิ มีกำปัง</p>
+            <p><strong>ผู้ช่วย:</strong> สาวพรยมล สุมิตร</p>
+            <p><strong>โทรศัพท์:</strong> 081-234-5678 | <strong>Email:</strong> sinner@limbuscompany.com</p>
+            <p><strong>Facebook:</strong> Limbus Company Fan Club</p>
+        </section>
+
+    </div> 
+
+    <footer>
+        <p>Copyright © 2026 Limbus Company. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
